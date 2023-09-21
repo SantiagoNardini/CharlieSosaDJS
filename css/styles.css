@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Quicksand:wght@500&family=Raleway:wght@500&display=swap');
 
 * {
@@ -103,18 +101,22 @@
 }
 
 #instagram:hover{
+  transition-duration: 0.3s;
   color: #833AB4;
 }
 
 #facebook:hover{
+  transition-duration: 0.3s;
   color: #3b5998;
 }
 
 #whatsapp:hover{
+  transition-duration: 0.3s;
   color: #25D366;
 }
 
 #spotifyy:hover{
+  transition-duration: 0.3s;
   color: #1DB954;
 }
 
@@ -122,7 +124,7 @@
   background-color: #151515;
   align-items: center;
   margin: 0;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .contactoBotones{
@@ -138,14 +140,7 @@
 @media only screen and (max-width: 369px) {
   .socialFooter{
     padding: 12px;
-    
   }
-}
-
-.botonesContacto {
-
-  text-align: center;
-  color: white;
 }
 
 
@@ -154,6 +149,7 @@
   display: flex;
   justify-content: center;
   background-color: #0b0b0b;
+  padding-top: 4px;
 }
 
 .copyrightFooter {
@@ -163,6 +159,7 @@
   align-items: center;
   height: 40px;
   color: gray;
+  padding: 4px;
 }
 
 
@@ -261,12 +258,10 @@ p {
   max-width: 1920px;
   margin: 0;
   padding: 0;
-
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
   grid-row-gap: 0px;
-
 }
 
 .gallery {
@@ -302,6 +297,8 @@ p {
     margin: 0;
   }
 }
+
+
 
 .hero {
   position: relative;
@@ -561,7 +558,7 @@ textarea::placeholder {
 @media only screen and (max-width: 660px) {
 
   form {
-    width: 100%;
+    max-width: 480px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -579,6 +576,9 @@ textarea::placeholder {
     width: 100%;
   }
   input{
+    width: 100%;
+  }
+  textarea{
     width: 100%;
   }
 }
@@ -604,65 +604,6 @@ textarea::placeholder {
 }
 
 
-
-
-
-
-/* -------------------------------- 
-
-File#: _1_video-background
-Title: Responsive Video Background
-Descr: A full-width responsive video background
-Usage: codyhouse.co/license
-
--------------------------------- */
-/* reset */
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-* {
-  font: inherit;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-body {
-  background-color: hsl(0, 0%, 100%);
-  font-family: system-ui, sans-serif;
-  color: hsl(230, 7%, 23%);
-  font-size: 1rem;
-}
-
-h1 {
-  font-size: 2.0736rem;
-}
-
-
-h4 {
-  font-size: 1.2rem;
-}
-
-ol,
-ul,
-menu {
-  list-style: none;
-}
-
-
-
-
-a {
-  color: hsl(250, 84%, 54%);
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 
 img,
 video,
