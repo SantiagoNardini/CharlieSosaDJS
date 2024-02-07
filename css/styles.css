@@ -935,7 +935,7 @@ svg {
   fill: currentColor;
 }
 
-.back-to-top {
+.backToTop {
   --size: 50px;
   width: var(--size);
   height: var(--size);
@@ -946,29 +946,21 @@ svg {
   z-index: 100;
   border-radius: 50%;
   background-color: hsla(230, 13%, 9%, 0.9);
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.2s;
   border: 10px;
   border-width: 1px;
   border-style: solid;
   border-color: white;
 }
 
-.back-to-top:hover {
+.backToTop:hover {
   background-color: hsl(0, 0%, 2%);
 }
 
-.back-to-top .cd-icon {
+.backToTop .cd-icon {
   --size: 20px;
   display: block;
   margin: auto;
   color: hsl(0, 0%, 100%);
-}
-
-.back-to-top--is-visible {
-  visibility: visible;
-  opacity: 1;
 }
 
 .float {
