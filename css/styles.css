@@ -48,6 +48,13 @@
   padding: 8px;
 }
 
+.bandera{
+  max-width: 24px;
+  height: auto;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
 
 #navbar {
   pointer-events: none;
@@ -126,7 +133,7 @@
 
 #instagram:hover {
   transition-duration: 0.3s;
-  color: #833AB4;
+  color: #f27611;
 }
 
 #facebook:hover {
@@ -178,7 +185,6 @@
 
 .copyrightFooterContainer {
   font-family: 'Raleway', sans-serif;
-  display: flex;
   justify-content: center;
   background-color: #0b0b0b;
   padding-top: 4px;
@@ -231,6 +237,7 @@ h3 {
 .cardTexto {
   text-align: center !important;
   padding: 30px;
+  padding-right: 220px;
   color: white;
   display: flex;
   flex-direction: row;
@@ -1172,4 +1179,65 @@ svg {
 
 .menu--bottom--right .menuItem li a:hover {
   padding-left: 5px;
+}
+
+@media screen and (max-width: 576px) {
+
+}
+.sponsorsMain {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-content: space-evenly;
+  background-color: #0b0b0b;
+}
+
+.clientes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #0b0b0b;
+  font-size: 28px;
+  font-weight: 600;
+  padding-top: 20px;
+  padding-left: 6px;
+  padding-right: 6px;
+  color: white;
+}
+.clientes2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #0b0b0b;
+  font-size: 20px;
+  padding-left: 6px;
+  padding-right: 6px;
+  color: white;
+}
+
+.imagenClientes {
+  height: 210px;
+  width: auto;
+}
+.imagenClientes:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1440px) {
+  .imagenClientes {
+    height: 170px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .imagenClientes {
+    height: 130px;
+  }
+}
+@media screen and (max-width: 830px) {
+  .sponsorsMain {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }

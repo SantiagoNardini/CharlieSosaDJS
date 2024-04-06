@@ -1,4 +1,5 @@
 const mybutton = document.querySelector(".backToTop");
+mybutton.style.display = "none";
 
 window.onscroll = function() {scrollFunction()};
 
