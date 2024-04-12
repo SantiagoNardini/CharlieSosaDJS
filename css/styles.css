@@ -274,7 +274,7 @@ p {
 .eventos {
   font-family: 'Raleway', sans-serif;
   background-color: #0e0e0e;
-  padding: 40px;
+  padding: 60px;
 }
 
 .card-text {
@@ -1240,4 +1240,32 @@ svg {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
+}
+
+
+.wrapper{
+  width:100%;
+  background-color: #0e0e0e;
+  text-align:center;
+}
+.carousel{
+  width:90%;
+  margin:0px auto;
+}
+.slick-slider {
+  margin-bottom: 0px !important;
+}
+
+.slick-slider img{
+  width:100%;
+  padding-bottom: 20px;
+}
+.wrapper .slick-dots li button:before {
+  font-size:20px;
+  
+}
+.slick-dots {
+  color: #000; /* color of dots */
+   /* opacity of dots */
+  
 }
