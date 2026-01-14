@@ -2,6 +2,7 @@
 
 * {
   font-family: 'Raleway', sans-serif;
+  font-weight: normal;
 }
 
 ::-webkit-scrollbar {
@@ -258,11 +259,11 @@ h3 {
 
 .cardTexto {
   text-align: center !important;
-  padding: 30px;
+  padding: 70px;
   color: white;
   display: flex;
   flex-direction: row;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 300;
   text-align: left;
   align-items: center;
@@ -295,7 +296,8 @@ p {
 .eventos {
   font-family: 'Raleway', sans-serif;
   background-color: #0e0e0e;
-  padding: 60px;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 .card-text {
@@ -690,6 +692,21 @@ textarea::placeholder {
   margin-top: 16px;
 }
 
+.videobg{
+  background-color: #0e0e0e;
+}
+
+.contenedor-videos {
+      display: flex; /* Alinea los elementos secundarios en fila */
+      justify-content: space-around; /* Distribuye el espacio entre los videos */
+      align-items: center; /* Centra verticalmente los videos si tienen diferentes alturas */
+      flex-wrap: wrap;
+      padding: 14px;
+}
+
+.video-wrapper {
+      margin: 0px; /* Añade espacio entre los videos */
+}
 
 img,
 video,
