@@ -209,7 +209,7 @@ strong { font-weight: 600; color: #fff; }
   inset: 0 0 auto 0;
   z-index: 100;
   height: var(--header-h);
-  transition: background-color 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, backdrop-filter 0.3s, box-shadow 0.3s, transform 0.35s var(--ease);
 }
 .site-header.is-scrolled {
   background: rgba(11, 11, 11, 0.82);
@@ -309,6 +309,10 @@ strong { font-weight: 600; color: #fff; }
   .nav.is-open li:nth-child(3) { transition-delay: 0.1s; }
   .nav.is-open li:nth-child(4) { transition-delay: 0.15s; }
   .nav.is-open li:nth-child(5) { transition-delay: 0.2s; }
+
+  /* En móvil la cabecera aparece recién al scrollear */
+  .site-header:not(.is-scrolled) { transform: translateY(-100%); }
+  body.menu-open .site-header { transform: none; }
 
   body.menu-open { overflow: hidden; }
   /* backdrop-filter encierra al menú fijo dentro de la cabecera: se quita con el menú abierto */
@@ -791,6 +795,7 @@ html:not(.js) [data-spotify-load], html:not(.js) .spotify-note { display: none; 
 .social a:hover svg { stroke: #0b0b0b; }
 
 .contact-form {
+  min-width: 0;
   padding: clamp(24px, 4vw, 40px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -799,7 +804,7 @@ html:not(.js) [data-spotify-load], html:not(.js) .spotify-note { display: none; 
   gap: 18px;
 }
 
-.field { display: grid; gap: 8px; }
+.field { display: grid; gap: 8px; min-width: 0; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
 label { font-size: 0.9rem; font-weight: 600; color: rgba(255, 255, 255, 0.85); }
@@ -830,7 +835,16 @@ select {
   background-size: 18px;
   padding-right: 42px;
 }
-input[type="date"] { color-scheme: dark; }
+/* iOS le da al input de fecha un ancho mínimo propio que lo saca del formulario */
+input[type="date"] {
+  color-scheme: dark;
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+input[type="date"]::-webkit-date-and-time-value { text-align: left; }
 [aria-invalid="true"] { border-color: #ff6b6b; }
 
 .form-status { margin: 0; min-height: 1.4em; font-size: 0.95rem; color: var(--text-muted); }
