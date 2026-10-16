@@ -115,9 +115,13 @@
       return slide ? slide.getBoundingClientRect().width + 18 : carousel.clientWidth * 0.8;
     };
     const atEnd = () => carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 4;
+    // En PC arranca ya desplazado una foto: la primera asoma a la izquierda y no queda hueco vacío.
+    const desktop = window.matchMedia("(min-width: 601px)");
+    const home = () => (desktop.matches ? step() : 0);
+    carousel.scrollLeft = home();
 
     const go = (dir) => {
-      if (dir > 0 && atEnd()) carousel.scrollTo({ left: 0, behavior: "smooth" });
+      if (dir > 0 && atEnd()) carousel.scrollTo({ left: home(), behavior: "smooth" });
       else if (dir < 0 && carousel.scrollLeft <= 4) carousel.scrollTo({ left: carousel.scrollWidth, behavior: "smooth" });
       else carousel.scrollBy({ left: dir * step(), behavior: "smooth" });
     };

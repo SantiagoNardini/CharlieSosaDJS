@@ -554,6 +554,8 @@ strong { font-weight: 600; color: #fff; }
   object-fit: cover;
   transition: transform 0.6s var(--ease);
 }
+/* Foto vertical: subir el recorte para que entre el cartel de neón */
+.slide .img-galeria-14 { object-position: 50% 27%; }
 .slide:hover img { transform: scale(1.05); }
 
 @media (max-width: 600px) {
@@ -564,9 +566,10 @@ strong { font-weight: 600; color: #fff; }
 
 /* Reels verticales */
 .reels {
+  --reels-gap: clamp(16px, 4vw, 40px);
   display: flex;
   justify-content: center;
-  gap: clamp(16px, 4vw, 40px);
+  gap: var(--reels-gap);
   margin-top: clamp(48px, 7vw, 80px);
 }
 .reel {
@@ -577,6 +580,11 @@ strong { font-weight: 600; color: #fff; }
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
 }
 .reel video { width: 100%; aspect-ratio: 480 / 848; object-fit: cover; }
+/* Móvil: dos por fila y el tercero centrado debajo, sin scroll horizontal */
+@media (max-width: 600px) {
+  .reels { flex-wrap: wrap; }
+  .reel { flex-basis: calc((100% - var(--reels-gap)) / 2); }
+}
 
 /* ---------- Servicios y eventos ---------- */
 .intro { max-width: 780px; margin-bottom: 48px; }
@@ -627,8 +635,8 @@ strong { font-weight: 600; color: #fff; }
   object-fit: cover;
   transition: transform 0.7s var(--ease);
 }
-/* La pantalla LED está corrida a la derecha en la foto: centrar el recorte en ella */
-.event-card .img-cumpleanios { object-position: 61% 50%; }
+/* Charlie está corrido a la derecha en la foto: centrar el recorte en él */
+.event-card .img-cumpleanios { object-position: 63% 50%; }
 .event-card::after {
   content: "";
   position: absolute;
