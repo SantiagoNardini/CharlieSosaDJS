@@ -873,24 +873,67 @@ input[type="date"]::-webkit-date-and-time-value { text-align: left; }
 .site-footer {
   border-top: 1px solid var(--border);
   padding-block: 28px;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 .footer-inner {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px 24px;
+  gap: 20px;
 }
 .footer-inner p { margin: 0; }
-.footer-inner img { width: 32px; height: 32px; object-fit: contain; opacity: 0.8; }
-.footer-place { display: flex; align-items: center; gap: 8px; }
-.flag { width: 22px; height: auto; border-radius: 2px; }
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-brand img { width: 26px; height: 26px; object-fit: contain; opacity: 0.85; }
 
+/* Hora de Barcelona y Buenos Aires (la etiqueta solo se ve en móvil; en PC queda para lectores de pantalla) */
+.footer-time-label {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.footer-clocks { display: flex; align-items: center; gap: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.footer-clocks > span:not(.footer-clocks-line) { display: inline-flex; align-items: center; gap: 7px; }
+.footer-clocks time { color: var(--text); font: 700 0.95rem var(--font-display); }
+.footer-clocks time:empty { display: none; }
+.footer-clocks-line { width: 22px; height: 1px; background: var(--gradient); }
+.flag { width: 18px; height: auto; border-radius: 2px; }
+
+/* Redes en versión chica */
+.social-sm { justify-content: flex-end; gap: 8px; }
+.social-sm a { width: 36px; height: 36px; }
+.social-sm svg { width: 16px; height: 16px; }
+
+/* Móvil y tablet: apilado, con más aire arriba y bloques agrupados por cercanía */
+@media (max-width: 960px) {
+  .site-footer { padding-top: 40px; }
+  .footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 0; }
+  .footer-time { margin-top: 16px; }
+  .footer-time-label {
+    position: static;
+    width: auto; height: auto;
+    overflow: visible;
+    clip: auto;
+    margin-bottom: 6px;
+    font: 600 0.7rem var(--font-display);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  /* Redes de 44 px: tamaño mínimo recomendado para tocar con el dedo */
+  .social-sm { justify-content: center; gap: 10px; margin-top: 24px; }
+  .social-sm a { width: 44px; height: 44px; }
+  .social-sm svg { width: 18px; height: 18px; }
+}
+/* Deja libre la zona de los botones flotantes (WhatsApp y "volver arriba", que llega a 138 px del borde) */
 @media (max-width: 600px) {
-  .footer-inner { justify-content: center; text-align: center; flex-direction: column; }
-  .site-footer { padding-bottom: 100px; }
+  .site-footer { padding-bottom: 148px; }
+}
+/* Pantallas muy angostas: una ciudad por línea */
+@media (max-width: 400px) {
+  .footer-clocks { flex-wrap: wrap; justify-content: center; row-gap: 6px; }
+  .footer-clocks-line { display: none; }
 }
 
 /* ---------- Botones flotantes ---------- */

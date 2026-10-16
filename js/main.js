@@ -14,6 +14,19 @@
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
+  /* ---------- Footer: hora en vivo de Barcelona y Buenos Aires ---------- */
+  const clocks = $$("time[data-tz]");
+  if (clocks.length) {
+    const tick = () => {
+      const now = new Date();
+      clocks.forEach((el) => {
+        el.textContent = new Intl.DateTimeFormat("es-ES", { hour: "2-digit", minute: "2-digit", timeZone: el.dataset.tz }).format(now);
+      });
+    };
+    tick();
+    setInterval(tick, 30000);
+  }
+
   /* ---------- Menú móvil ---------- */
   const toggle = $(".nav-toggle");
   const nav = $("#menu");
