@@ -47,15 +47,13 @@
     window.matchMedia("(min-width: 861px)").addEventListener("change", (e) => { if (e.matches) setMenu(false); });
   }
 
-  /* ---------- Cabecera y botón "volver arriba" según scroll ---------- */
+  /* ---------- Cabecera según scroll ---------- */
   const header = $(".site-header");
-  const toTop = $(".fab-top");
   let ticking = false;
 
   const onScroll = () => {
     const y = window.scrollY;
     header.classList.toggle("is-scrolled", y > 40);
-    toTop.classList.toggle("is-visible", y > 800);
     ticking = false;
   };
   window.addEventListener("scroll", () => {

@@ -926,9 +926,9 @@ input[type="date"]::-webkit-date-and-time-value { text-align: left; }
   .social-sm a { width: 44px; height: 44px; }
   .social-sm svg { width: 18px; height: 18px; }
 }
-/* Deja libre la zona de los botones flotantes (WhatsApp y "volver arriba", que llega a 138 px del borde) */
+/* Deja libre la zona del botón flotante de WhatsApp (llega a 74 px del borde) */
 @media (max-width: 600px) {
-  .site-footer { padding-bottom: 148px; }
+  .site-footer { padding-bottom: 96px; }
 }
 /* Pantallas muy angostas: una ciudad por línea */
 @media (max-width: 400px) {
@@ -936,7 +936,7 @@ input[type="date"]::-webkit-date-and-time-value { text-align: left; }
   .footer-clocks-line { display: none; }
 }
 
-/* ---------- Botones flotantes ---------- */
+/* ---------- Botón flotante ---------- */
 .fab {
   position: fixed;
   right: clamp(16px, 3vw, 32px);
@@ -956,20 +956,6 @@ input[type="date"]::-webkit-date-and-time-value { text-align: left; }
 }
 .fab-whatsapp svg { width: 32px; height: 32px; }
 .fab-whatsapp:hover { transform: scale(1.08); }
-
-.fab-top {
-  bottom: calc(clamp(16px, 3vw, 28px) + 72px);
-  right: calc(clamp(16px, 3vw, 32px) + 5px);
-  width: 48px; height: 48px;
-  background: rgba(26, 26, 26, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-}
-.fab-top svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.fab-top.is-visible { opacity: 1; visibility: visible; transform: none; }
-.fab-top:hover { background: #262626; }
 
 /* ---------- Visor de fotos ---------- */
 .lightbox {
